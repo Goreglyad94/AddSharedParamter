@@ -9,6 +9,10 @@ namespace AddSharedParamter.Models.XmlModel
 {
     class MainModel
     {
+        /// <summary>
+        /// Выгрузка в XML
+        /// </summary>
+        /// <param name="ParamsSetDto"></param>
         public void ParamsXmlSerializer(List<ParametersSetDto> ParamsSetDto)
         {
             try
@@ -26,7 +30,10 @@ namespace AddSharedParamter.Models.XmlModel
             }
 
         }
-
+        /// <summary>
+        /// Чтение из XML
+        /// </summary>
+        /// <param name="ParamsSetDto"></param>
         public List<ParametersSetDto> ParamsXmlDeserializer()
         {
             try

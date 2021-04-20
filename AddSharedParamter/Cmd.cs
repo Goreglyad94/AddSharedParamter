@@ -64,6 +64,8 @@ namespace AddSharedParamter
                 }
             }
 
+            ExEventAddParameters._paramsGroup = bipg;
+
             List<string> builtInPramGroupValue = new List<string>();
             Dictionary<string, string> dicParamGroup = new Dictionary<string, string>();
             foreach (var item in builtInPramGroup)
@@ -79,10 +81,11 @@ namespace AddSharedParamter
             }
             SharedParameterDto.BuiltInParamGroupName = builtInPramGroupValue;
 
+            ExEventAddParameters._paramsName = dicParamGroup;
 
             MainWindow mainWindow = new MainWindow();
             MainWindowViewModel mainWindowViewModel = new MainWindowViewModel(sharedGroupsDtos);
-            mainWindowViewModel.exEventAddParameters = ExternalEvent.Create(new ExEventAddParameters());
+            mainWindowViewModel.exEventAddParameters = ExternalEvent.Create(new ExEventAddParameters(uiapp));
             mainWindow.DataContext = mainWindowViewModel;
             mainWindow.Show();
 
